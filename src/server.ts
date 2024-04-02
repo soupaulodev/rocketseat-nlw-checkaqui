@@ -1,0 +1,14 @@
+import fastify from "fastify";
+
+const PORT = (process.env.PORT || 3333) as number;
+
+const app = fastify();
+
+app
+  .listen({ port: PORT })
+  .then((address) => {
+    console.log(`Server listening at ${address}`);
+  })
+  .catch((err) => {
+    console.log("Error: ", err);
+  });
