@@ -24,4 +24,28 @@ Instalando a CLI para executar código TypeScript
 npm i tsx -D
 ```
 
+Instalando o prisma
+
+```
+npm i prisma -D
+```
+
+Configurando o Prisma
+
+```
+npx prisma init --datasource-provider SQLite
+```
+
+Após a criacão dos modelos no arquivo schema.prisma é feito a migrate
+
+```
+npx prisma migrate dev
+```
+
+O banco de dados pode ser visualizado por meio do Prisma Studio
+
+```
+npx prisma studio
+```
+
 a
