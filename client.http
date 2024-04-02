@@ -7,3 +7,14 @@ Accept: application/json
   "details": "Um evento para quem é apaixonado por programacão",
   "maximumAttendees": 100
 }
+
+###
+
+POST http://localhost:3333/events/b7e1ab68-d8b3-4e24-94db-41f876b4bcf3/attendees
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Paulo Marques",
+  "email": "pm@pm.com"
+}
