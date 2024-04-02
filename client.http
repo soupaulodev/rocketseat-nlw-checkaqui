@@ -18,3 +18,8 @@ Accept: application/json
   "name": "Paulo Marques",
   "email": "pm@pm.com"
 }
+
+###
+
+GET http://localhost:3333/events/b7e1ab68-d8b3-4e24-94db-41f876b4bcf3
+Accept: application/json
