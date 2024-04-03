@@ -4,7 +4,9 @@
   "description": "",
   "main": "backend/server.ts",
   "scripts": {
-    "dev": "tsx watch --env-file .env backend/src/server.ts"
+    "dev": "tsx watch --env-file .env backend/src/server.ts",
+    "start": "tsx backend/src/server.ts",
+    "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend"
   },
   "keywords": [],
   "author": "",
@@ -19,6 +21,7 @@
     "src"
   ],
   "dependencies": {
+    "@fastify/static": "^7.0.2",
     "@prisma/client": "^5.11.0",
     "fastify": "^4.26.2",
     "fastify-type-provider-zod": "^1.1.9",
