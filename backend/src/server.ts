@@ -4,13 +4,13 @@ import { registerForEvent } from "./routes/register-for-event";
 import { getEvent } from "./routes/get-event";
 import { getAttendeesBadge } from "./routes/get-attendee-badge";
 
-const PORT = (process.env.PORT || 3333) as number;
+const PORT = (process.env.PORT || 3000) as number;
 const app = fastify();
 
-app.register(createEvent);
-app.register(registerForEvent);
-app.register(getEvent);
-app.register(getAttendeesBadge);
+app.register(createEvent, { prefix: "/api" });
+app.register(registerForEvent, { prefix: "/api" });
+app.register(getEvent, { prefix: "/api" });
+app.register(getAttendeesBadge, { prefix: "/api" });
 
 app
   .listen({ port: PORT })
