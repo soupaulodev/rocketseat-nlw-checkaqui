@@ -26,7 +26,7 @@ export async function getEvent(app: FastifyInstance) {
               slug: z.string(),
               details: z.string().nullable(),
               maximumAttendees: z.number().int().nullable(),
-              totalAttendees: z.number().int(),
+              attendeesAmount: z.number().int(),
             }),
           }),
         },
@@ -64,7 +64,7 @@ export async function getEvent(app: FastifyInstance) {
           slug: event.slug,
           details: event.details,
           maximumAttendees: event.maximumAttendees,
-          totalAttendees: event._count.attendees,
+          attendeesAmount: event._count.attendees,
         },
       });
     }
