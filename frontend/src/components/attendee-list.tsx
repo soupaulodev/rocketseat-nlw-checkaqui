@@ -72,7 +72,7 @@ export function AttendeeList() {
       </div>
 
       {/* Não da pra colocar borda arredondada em tabela, então colocamos a tabela numa div e o arredondamento na div */}
-      <Table className="w-dvh">
+      <Table>
         <thead>
           <tr className="border-b border-white/10">
             <TableHeader style={{ width: 48 }}>
