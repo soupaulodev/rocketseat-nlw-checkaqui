@@ -25,3 +25,8 @@ Accept: application/json
 
 GET http://localhost:3333/events/b7e1ab68-d8b3-4e24-94db-41f876b4bcf3
 Accept: application/json
+
+###
+
+GET http://localhost:3333/attendees/1/badge
+Accept: application/json
