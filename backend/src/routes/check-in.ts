@@ -12,11 +12,12 @@ export async function checkIn(app: FastifyInstance) {
     "/attendees/:attendeeId/check-in",
     {
       schema: {
+        summary: "Check in an attendee",
         params: z.object({
           attendeeId: z.string().uuid(),
         }),
         response: {
-          201: z.null,
+          201: z.object({}),
         },
       },
     },

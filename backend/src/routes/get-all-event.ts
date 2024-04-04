@@ -12,6 +12,7 @@ export async function getAllEvent(app: FastifyInstance) {
     "/events",
     {
       schema: {
+        summary: "Get all events",
         response: {
           200: z.object({
             events: z.array(
