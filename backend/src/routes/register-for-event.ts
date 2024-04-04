@@ -8,9 +8,6 @@ import z from "zod";
 import { prisma } from "../lib/prisma";
 
 export async function registerForEvent(app: FastifyInstance) {
-  app.setValidatorCompiler(validatorCompiler);
-  app.setSerializerCompiler(serializerCompiler);
-
   app.withTypeProvider<ZodTypeProvider>().post(
     "/events/:eventId/attendees",
     {
@@ -24,7 +21,7 @@ export async function registerForEvent(app: FastifyInstance) {
         }),
         response: {
           201: z.object({
-            attendeeId: z.number(),
+            attendeeId: z.string(),
           }),
         },
       },

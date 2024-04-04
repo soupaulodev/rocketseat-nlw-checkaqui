@@ -9,9 +9,6 @@ import {
 } from "fastify-type-provider-zod";
 
 export async function createEvent(app: FastifyInstance) {
-  app.setValidatorCompiler(validatorCompiler);
-  app.setSerializerCompiler(serializerCompiler);
-
   app.withTypeProvider<ZodTypeProvider>().post(
     "/events",
     {

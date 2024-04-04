@@ -8,8 +8,6 @@ import z, { ZodDate } from "zod";
 import { prisma } from "../lib/prisma";
 
 export async function getEventAttendees(app: FastifyInstance) {
-  app.setValidatorCompiler(validatorCompiler);
-  app.setSerializerCompiler(serializerCompiler);
   app.withTypeProvider<ZodTypeProvider>().get(
     "/events/:eventId/attendees",
     {

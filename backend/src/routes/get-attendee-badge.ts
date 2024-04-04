@@ -8,8 +8,6 @@ import z from "zod";
 import { prisma } from "../lib/prisma";
 
 export async function getAttendeesBadge(app: FastifyInstance) {
-  app.setValidatorCompiler(validatorCompiler);
-  app.setSerializerCompiler(serializerCompiler);
   app.withTypeProvider<ZodTypeProvider>().get(
     "/attendees/:attendeeId/badge",
     {
