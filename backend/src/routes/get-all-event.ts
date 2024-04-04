@@ -13,6 +13,7 @@ export async function getAllEvent(app: FastifyInstance) {
     {
       schema: {
         summary: "Get all events",
+        tags: ["events"],
         response: {
           200: z.object({
             events: z.array(
