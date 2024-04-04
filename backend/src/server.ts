@@ -16,10 +16,16 @@ import {
 } from "fastify-type-provider-zod";
 import { errorHandler } from "./error-handler";
 import { swaggerConfig } from "./utils/swagger";
+import fastifyCors from "@fastify/cors";
 
 const app = fastify();
 
+app.register(fastifyCors, {
+  origin: "*",
+});
+
 const PORT = (process.env.PORT || 3000) as number;
+const HOST = (process.env.HOST || "0.0.0.0") as string;
 const __dirname = path.resolve();
 
 app.register(fastifySwagger, swaggerConfig);
@@ -46,7 +52,7 @@ app.register(fastifyStatic, {
 app.setErrorHandler(errorHandler);
 
 app
-  .listen({ port: PORT })
+  .listen({ port: PORT, host: HOST })
   .then((address) => {
     console.log(`Server listening at ${address}`);
   })
