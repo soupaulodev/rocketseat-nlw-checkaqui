@@ -5,8 +5,10 @@
   "main": "backend/server.ts",
   "scripts": {
     "dev": "tsx watch --env-file .env backend/src/server.ts",
-    "start": "tsx backend/src/server.ts",
-    "build": "npm install && npx prisma migrate deploy --schema backend/prisma/schema.prisma && npm install --prefix frontend && npm run build --prefix frontend"
+    "build": "tsup backend/src --format esm",
+    "start": "node dist/server.mjs",
+    "db:migrate": "npx prisma migrate dev --schema backend/prisma/schema.prisma",
+    "db:studio": "npx prisma studio"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +19,7 @@
   "devDependencies": {
     "@types/node": "^20.12.2",
     "prisma": "^5.11.0",
+    "tsup": "^8.0.2",
     "tsx": "^4.7.1",
     "typescript": "^5.4.3"
   },
