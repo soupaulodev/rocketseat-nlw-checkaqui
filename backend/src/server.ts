@@ -13,28 +13,16 @@ import { getEventAttendees } from "./routes/get-event-attendees";
 import {
   serializerCompiler,
   validatorCompiler,
-  jsonSchemaTransform,
 } from "fastify-type-provider-zod";
 import { errorHandler } from "./error-handler";
+import { swaggerConfig } from "./utils/swagger";
 
 const app = fastify();
 
 const PORT = (process.env.PORT || 3000) as number;
 const __dirname = path.resolve();
 
-app.register(fastifySwagger, {
-  swagger: {
-    consumes: ["application/json"],
-    produces: ["application/json"],
-    info: {
-      title: "Check-in API",
-      description: "Especificações do CheckAqui API",
-      version: "1.0.0",
-    },
-  },
-  transform: jsonSchemaTransform,
-});
-
+app.register(fastifySwagger, swaggerConfig);
 app.register(fastifySwaggerUI, {
   routePrefix: "/docs",
 });
