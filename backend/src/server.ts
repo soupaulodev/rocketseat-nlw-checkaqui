@@ -7,6 +7,7 @@ import { getAttendeesBadge } from "./routes/get-attendee-badge";
 import { getAllEvent } from "./routes/get-all-event";
 import path from "path";
 import { checkIn } from "./routes/check-in";
+import { getEventAttendees } from "./routes/get-event-attendees";
 
 const app = fastify();
 
@@ -18,6 +19,7 @@ app.register(registerForEvent, { prefix: "/api" });
 app.register(getEvent, { prefix: "/api" });
 app.register(getAllEvent, { prefix: "/api" });
 app.register(getAttendeesBadge, { prefix: "/api" });
+app.register(getEventAttendees, { prefix: "/api" });
 app.register(checkIn, { prefix: "/api" });
 
 app.register(fastifyStatic, {

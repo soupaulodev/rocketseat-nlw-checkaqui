@@ -35,3 +35,11 @@ Accept: application/json
 ### Get CheckIn
 GET http://localhost:3000/api/attendees/b834fd9f-e472-4b5d-8603-16f03c8fcac6/check-in
 Accept: application/json
+
+### Get Attendees
+GET http://localhost:3000/api/events/7c8a240e-a3be-417b-a3cf-0dc34458c057/attendees
+Accept: application/json
+
+### Get Attendees with query
+GET http://localhost:3000/api/events/7c8a240e-a3be-417b-a3cf-0dc34458c057/attendees?query=Paulo
+Accept: application/json
