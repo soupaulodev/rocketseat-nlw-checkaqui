@@ -5,7 +5,7 @@ export const swaggerConfig = {
     consumes: ["application/json"],
     produces: ["application/json"],
     info: {
-      title: "Check-in API",
+      title: "CheckAqui API",
       description: "Especificações do CheckAqui API",
       version: "1.0.0",
     },
