@@ -1,0 +1,45 @@
+
+### Create Event
+POST http://localhost:3000/api/events
+Content-Type: application/json
+Accept: application/json
+
+{
+  "title": "Unite Summit 2",
+  "details": "Um evento para quem é apaixonado por programacão",
+  "maximumAttendees": 100
+}
+
+### Create Attendee
+POST http://localhost:3000/api/events/7c8a240e-a3be-417b-a3cf-0dc34458c057/attendees
+Content-Type: application/json
+Accept: application/json
+
+{
+  "name": "Paulo Marques",
+  "email": "pm@pm.com"
+}
+
+### Get Event
+GET http://localhost:3000/api/events/7c8a240e-a3be-417b-a3cf-0dc34458c057
+Accept: application/json
+
+### Get All Events
+GET http://localhost:3000/api/events
+Accept: application/json
+
+### Get Attendee
+GET http://localhost:3000/api/attendees/b834fd9f-e472-4b5d-8603-16f03c8fcac6/badge
+Accept: application/json
+
+### Get CheckIn
+GET http://localhost:3000/api/attendees/b834fd9f-e472-4b5d-8603-16f03c8fcac6/check-in
+Accept: application/json
+
+### Get Attendees
+GET http://localhost:3000/api/events/7c8a240e-a3be-417b-a3cf-0dc34458c057/attendees
+Accept: application/json
+
+### Get Attendees with query
+GET http://localhost:3000/api/events/7c8a240e-a3be-417b-a3cf-0dc34458c057/attendees?query=Paulo
+Accept: application/json
