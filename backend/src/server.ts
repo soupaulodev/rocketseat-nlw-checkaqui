@@ -15,6 +15,7 @@ import {
   validatorCompiler,
   jsonSchemaTransform,
 } from "fastify-type-provider-zod";
+import { errorHandler } from "./error-handler";
 
 const app = fastify();
 
@@ -53,6 +54,8 @@ app.register(fastifyStatic, {
   root: path.join(__dirname, "frontend", "dist"),
   prefix: "/",
 });
+
+app.setErrorHandler(errorHandler);
 
 app
   .listen({ port: PORT })
