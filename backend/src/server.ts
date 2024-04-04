@@ -6,6 +6,7 @@ import { getEvent } from "./routes/get-event";
 import { getAttendeesBadge } from "./routes/get-attendee-badge";
 import { getAllEvent } from "./routes/get-all-event";
 import path from "path";
+import { checkIn } from "./routes/check-in";
 
 const app = fastify();
 
@@ -17,6 +18,7 @@ app.register(registerForEvent, { prefix: "/api" });
 app.register(getEvent, { prefix: "/api" });
 app.register(getAllEvent, { prefix: "/api" });
 app.register(getAttendeesBadge, { prefix: "/api" });
+app.register(checkIn, { prefix: "/api" });
 
 app.register(fastifyStatic, {
   root: path.join(__dirname, "frontend", "dist"),

@@ -31,3 +31,7 @@ Accept: application/json
 ### Get Attendee
 GET http://localhost:3000/api/attendees/b834fd9f-e472-4b5d-8603-16f03c8fcac6/badge
 Accept: application/json
+
+### Get CheckIn
+GET http://localhost:3000/api/attendees/b834fd9f-e472-4b5d-8603-16f03c8fcac6/check-in
+Accept: application/json
