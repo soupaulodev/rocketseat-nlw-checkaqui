@@ -2,12 +2,12 @@
   "name": "checkaqui-api",
   "version": "1.0.0",
   "description": "",
-  "main": "backend/server.ts",
+  "main": "server.ts",
   "scripts": {
-    "dev": "tsx watch --env-file .env backend/src/server.ts",
-    "build": "tsup backend/src --format esm",
+    "dev": "tsx watch --env-file .env src/server.ts",
+    "build": "tsup src --format esm",
     "start": "node dist/server.mjs",
-    "db:migrate": "npx prisma migrate dev --schema backend/prisma/schema.prisma",
+    "db:migrate": "npx prisma migrate dev --schema prisma/schema.prisma",
     "db:studio": "npx prisma studio"
   },
   "keywords": [],
